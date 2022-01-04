@@ -4,24 +4,30 @@
 using namespace std;
 
 int main(){
-    int n;
-    cin >> n;
-    ofstream myfile;
+
+    /*ofstream myfile;
     myfile.open("newfile.txt");
-    myfile << n;
-    myfile.close();
+    myfile << "2";
+    myfile.close();*/
 
-    ifstream myfile2;
-    myfile2.open("newfile.txt");
+    char filename[50];
+    ifstream bucky;
+    cin.getline(filename, 50);
+    bucky.open(filename);
 
-    if(!myfile2.is_open()){
+    if(!bucky.is_open()){
         exit(EXIT_FAILURE);
     }
 
     char word[50];
-    myfile2 >> word;
-    while(myfile2.good()){
+    bucky >> word;
+    while(bucky.good()){
         cout << word << " ";
-        myfile2 >> word;
+        bucky >> word;
+
     }
+
+    return 0;
 }
+
+
